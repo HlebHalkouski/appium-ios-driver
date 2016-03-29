@@ -26,5 +26,5 @@ before_script:
   - gulp transpile
   - gulp jshint
 script:
-  - if [ -n "$RECURSIVE" ]; then mocha --recursive build/test/$TEST -g @skip-ci -i; else mocha build/test/$TEST -g @skip-ci -i; fi
+  - if [ -n "$RECURSIVE" ]; then mocha --recursive  -g @skip-ci -i build/test/$TEST; else mocha -g @skip-ci -i build/test/$TEST; fi
   - if [ -n "$FINAL_GULP" ]; then gulp $FINAL_GULP; fi
